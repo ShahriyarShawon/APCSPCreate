@@ -16,4 +16,3 @@ class Encryptor:
         print(raw_pass)
         return raw_pass
         
-
