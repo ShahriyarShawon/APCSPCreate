@@ -1,16 +1,16 @@
 import json
 
-def get_info():
-    with open("authenticate.json","r") as f:
-        authenticate = json.load(f)
-        print(authenticate)
+def get_info(username_holder, password_holder):
+    j_username = ""
+    j_password = ""
+    username = username_holder.get()
+    password = password_holder.get()
     
-
-
-
-def authenticate_login(username, password):
-    get_info()
-    username = username.get()
-    password = password.get()
-
-    # print("Username is " + username + " Password is " + password)
+    with open("authenticate.json","r") as f:
+        j_content = json.load(f)
+        j_username = j_content["username"]
+        j_password = j_content["password"]
+    return password
+def authenticate(username_holder, password_holder):
+    get_info(username_holder, password_holder)
+    

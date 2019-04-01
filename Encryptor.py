@@ -16,3 +16,5 @@ class Encryptor:
         print(raw_pass)
         return raw_pass
         
+encryptor = Encryptor()
+encryptor.decrypt(encryptor.encrypt("P@$$word1"))
