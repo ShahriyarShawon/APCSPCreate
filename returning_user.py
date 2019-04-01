@@ -28,7 +28,7 @@ def run_returning_user():
 
 
     submit_button = Button(login_frame, text="Submit", 
-                            command=lambda: Login.authenticate_login(username_holder, password_holder)
+                            command=lambda: Login.authenticate(username_holder, password_holder)
                             ).grid(row=2, column=0)
 
 
