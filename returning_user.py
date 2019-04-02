@@ -1,6 +1,6 @@
 from tkinter import *
 import Login
-
+import newaccount
 def run_returning_user():
     root = Tk()
     root.title("Suki and Shay's Pro Password Manager")
@@ -30,6 +30,11 @@ def run_returning_user():
     submit_button = Button(login_frame, text="Submit", 
                             command=lambda: Login.authenticate(username_holder, password_holder)
                             ).grid(row=2, column=0)
+                            
+    new_account_button = Button(login_frame, text="Create New Account", 
+                            command=lambda: newaccount.main()
+                            ).grid(row=2, column=1)
+
 
 
     root.mainloop()

@@ -13,8 +13,7 @@ def create_window():
     create_username= Entry(root, textvariable=holder, show="*")
     create_username.grid(row=1, column=1)
     
-    create_password
+    
     root.mainloop()
     
     
-main()
