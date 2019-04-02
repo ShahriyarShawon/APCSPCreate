@@ -22,10 +22,7 @@ def create_window():
     
     create_account= Button(root, text= "Create Account").grid(row=4, column=1)
     
-    
-    
     root.mainloop()
     
 
     
-main()
