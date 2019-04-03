@@ -14,6 +14,9 @@ class Encryptor:
         raw_pass = bytearray.fromhex(enc_password).decode('utf-8')
         # print(raw_pass)
         return raw_pass
+
+# TODO: create a method that generates a random char long id
+
         
 # encryptor = Encryptor()
 # encryptor.decrypt(encryptor.encrypt("password"))
