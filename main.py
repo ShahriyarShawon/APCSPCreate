@@ -8,11 +8,9 @@ import newaccount
 
 with open("authenticate.json", "r") as f:
     authenticate = json.load(f)
-    if authenticate["first_time"] == True:
-        print("This ran")   
+    if authenticate["first_time"] == True:        
         newaccount.main()     
     else:
-        print("This ran ")
         run_returning_user()
 
         
