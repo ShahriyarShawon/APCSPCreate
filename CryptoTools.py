@@ -1,4 +1,4 @@
-class Encryptor:
+class CryptoTools:
     def __init__(self):
         pass
 
