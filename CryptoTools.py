@@ -1,6 +1,13 @@
+import random 
+import string
+
 class CryptoTools:
     def __init__(self):
         pass
+        
+    def gen_rand_id(self, length):
+        # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits/34017605#34017605
+        return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length))
 
     def encrypt(self, raw_password):
         enc_pass = ""
@@ -15,7 +22,9 @@ class CryptoTools:
         # print(raw_pass)
         return raw_pass
 
-# TODO: create a method that generates a random char long id
+    
+        
+        
 
         
 # encryptor = Encryptor()
