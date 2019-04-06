@@ -1,8 +1,9 @@
 from Accounts import Accounts
 import json
 
-def bootup(isFirstTime):
-    with open("account.json","r") as f:
+
+def bootup(account):
+    with open("account.json","r+") as f:
         content = json.load(f)
         isFirstTime = content["first_time"]
 
@@ -22,16 +23,11 @@ def bootup(isFirstTime):
             except Exception as e:
                 print(e)
         else:
-            # sign in
-            print("Sign in")
-            pass
+            account.sign_in()
 
-
-def main():
-    with open("account.json", "r+") as f:
-        content = json.load(f)        
-        bootup(content["first_time"])
+def main(account):
+    bootup(account)
 
 if __name__ == "__main__":
     account = Accounts()
-    main()
+    main(account)
