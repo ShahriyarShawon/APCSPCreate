@@ -2,3 +2,5 @@ __pycache__
 Encryptor.pyc
 Login.pyc 
 newaccount.pyc
+account.json
+database.json
