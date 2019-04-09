@@ -5,7 +5,13 @@ import string
 
 class PassMger:
     def __init__(self):
+        self.osCommandString = "notepad.exe database.json"
         pass
+        
+    def open_database(self):        
+        os.system(self.osCommandString)
+        print("I should have opened ")
+            
     def user_prompts(self):
         print("Would you like to:")
         print("[1] Create an entry ")
@@ -18,6 +24,14 @@ class PassMger:
         
         if create_delete_get == 1:
             self.create_entry()
+        elif create_delete_get == 2:
+            self.open_database()
+            entry_to_delete = raw_input("Enter the Entry id of the Entry you would like to get rid of \n> ")
+            self.delete_login(entry_to_delete)
+        elif create_delete_get == 3:
+            self.open_database()
+            entry_to_get_pass = raw_input("Enter the id of the password you want to retrieve\n> ")
+            self.get_pass_for_entry(entry_to_get_pass)
             
                     
 
@@ -85,18 +99,31 @@ class PassMger:
                                             }
             f.seek(0)
             json.dump(content, f, indent=4)
-            f.truncate()            
+            f.truncate()  
+        self.user_prompts()
+        
         
             
     def delete_login(self,entry_id):
+        # self.display_entries()
+        # self.open_database()
         with open("database.json","r+") as f:
             content = json.load(f)
             del content[entry_id]
             f.seek(0)
             json.dump(content, f, indent=4)
-            f.truncate()            
+            f.truncate() 
+        self.user_prompts()           
         
-    
+    def get_pass_for_entry(self,entry_id):
+        # self.display_entries()
+        # self.open_database()
+        with open("database.json", "r") as f:
+            content = json.load(f)
+            print(self.decrypt(content[entry_id]["password"]))
+        self.user_prompts()
+        
+        
     def gen_rand_id(self, length):
         # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits/34017605#34017605
         return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length))

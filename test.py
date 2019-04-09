@@ -1,4 +1,9 @@
 import json
+import os
+
+# webbrowser.open("database.json")
+osCommandString = "notepad.exe database.json"
+os.system(osCommandString)
 
 # with open("authenticate.json","r") as f:
 #     j_content = json.load(f)
