@@ -2,8 +2,8 @@ import json
 import os
 
 # webbrowser.open("database.json")
-osCommandString = "notepad.exe database.json"
-os.system(osCommandString)
+# osCommandString = "notepad.exe database.json"
+# os.system(osCommandString)
 
 # with open("authenticate.json","r") as f:
 #     j_content = json.load(f)
@@ -17,3 +17,5 @@ os.system(osCommandString)
 #     f.seek(0)
 #     json.dump(content, f, indent=4)
 #     f.truncate()
+
+

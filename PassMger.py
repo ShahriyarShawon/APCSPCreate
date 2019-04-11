@@ -65,6 +65,8 @@ class PassMger:
             f.seek(0)
             json.dump(content, f, indent=4)
             f.truncate()
+        #TODO: inform user to now login with the same information
+        self.sign_in()
 
     def sign_in(self):
         username =raw_input("Enter your Username: ")
@@ -115,6 +117,7 @@ class PassMger:
             f.truncate() 
         self.user_prompts()           
         
+    # TODO: make password more visible
     def get_pass_for_entry(self,entry_id):
         # self.display_entries()
         # self.open_database()
