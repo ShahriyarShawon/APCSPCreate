@@ -15,8 +15,7 @@ def bootup(account):
             json.dump(content, f, indent=4)
             f.truncate()
             try:       
-                # TODO: make this prompt better
-                sign_in_or_sign_up = int(raw_input("Press 1 to Sign In or 2 to Sign up\n>"))
+                sign_in_or_sign_up = int(input("Select an option\n[1]Sign In\n[2]Sign up\n>"))
                 if sign_in_or_sign_up == 1:
                     passMger.sign_in()
                     # print("Sign in")                    

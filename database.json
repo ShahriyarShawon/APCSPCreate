@@ -1,7 +1,12 @@
 {
     "OO8Z8UHW": {
-        "username": "dumbo", 
-        "password": "!X:287&^~!X:2d!X:22!X:2f", 
+        "username": "dumbo",
+        "password": "!X:287&^~!X:2d!X:22!X:2f",
         "site": "www.google.com"
+    },
+    "5AMDMGAU": {
+        "site": "www",
+        "username": "www",
+        "password": "777777"
     }
 }
