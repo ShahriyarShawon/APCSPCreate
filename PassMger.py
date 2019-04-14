@@ -20,17 +20,17 @@ class PassMger:
 
     # TODO: complete the different actions 
         
-        create_delete_get = int(raw_input(">  "))
+        create_delete_get = int(input(">  "))
         
         if create_delete_get == 1:
             self.create_entry()
         elif create_delete_get == 2:
             self.open_database()
-            entry_to_delete = raw_input("Enter the Entry id of the Entry you would like to get rid of \n> ")
+            entry_to_delete = input("Enter the Entry id of the Entry you would like to get rid of \n> ")
             self.delete_login(entry_to_delete)
         elif create_delete_get == 3:
             self.open_database()
-            entry_to_get_pass = raw_input("Enter the id of the password you want to retrieve\n> ")
+            entry_to_get_pass = input("Enter the id of the password you want to retrieve\n> ")
             self.get_pass_for_entry(entry_to_get_pass)
             
                     
@@ -54,8 +54,8 @@ class PassMger:
 
         
     def create_account(self):
-        username = raw_input("Enter a username: ")
-        password = raw_input("Enter a password: ")
+        username = input("Enter a username: ")
+        password = input("Enter a password: ")
         password = self.encrypt(password)
         
         with open("account.json","r+") as f:
@@ -69,8 +69,8 @@ class PassMger:
         self.sign_in()
 
     def sign_in(self):
-        username =raw_input("Enter your Username: ")
-        password = raw_input("Enter your Password: ")
+        username =input("Enter your Username: ")
+        password = input("Enter your Password: ")
         password = self.encrypt(password)
 
         with open("account.json","r") as f:
@@ -80,7 +80,7 @@ class PassMger:
         else:
             print("Sorry, either your username or pasword was not matched in the login ")
             # print("")
-            fail_input = int(raw_input("Press 1 to try again or 2 to create a new account"))
+            fail_input = int(input("Press 1 to try again or 2 to create a new account"))
             if fail_input == 1:
                 self.sign_in()
             elif fail_input == 2:
@@ -90,9 +90,9 @@ class PassMger:
             
             
     def create_entry(self):
-        site = raw_input("Enter the Site of Login: ")
-        username = raw_input("Enter your username for " + site + ": ")
-        enc_password = self.encrypt(raw_input("Enter your password for " + site + ": "))
+        site = input("Enter the Site of Login: ")
+        username = input("Enter your username for " + site + ": ")
+        enc_password = self.encrypt(input("Enter your password for " + site + ": "))
         with open("database.json","r+") as f:
             content = json.load(f)
             content[self.gen_rand_id(8)] = {"site":site,
